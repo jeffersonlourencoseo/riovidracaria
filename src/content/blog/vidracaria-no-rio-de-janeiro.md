@@ -48,7 +48,7 @@ O mais importante é não comparar apenas o preço. Compare o custo-benefício: 
 
 ## Por que a Vidraçaria RJ é referência?
 
-A Vidraçaria RJ reúne o que há de melhor em uma **vidracaria no Rio de Janeiro**: experiência, atendimento em todos os bairros, equipe própria de instalação e compromisso com prazo. Atuamos na [Zona Sul](/vidracaria), [Zona Norte](/vidracaria), [Zona Oeste](/vidracaria), [Centro](/vidracaria/centro) e [Tijuca](/vidracaria/tijuca), com equipe preparada para atender desde pequenos reparos até grandes envidraçamentos.
+A Vidraçaria RJ reúne o que há de melhor em uma **vidracaria no Rio de Janeiro**: experiência, atendimento em todos os bairros, equipe própria de instalação e compromisso com prazo. Atuamos na [Zona Sul](/vidracaria), [Zona Norte](/vidracaria), [Zona Oeste](/vidracaria), [Centro](/vidracaria/centro) e [Zona Norte](/vidracaria), com equipe preparada para atender desde pequenos reparos até grandes envidraçamentos.
 
 ## FAQ sobre vidracaria no Rio de Janeiro
 

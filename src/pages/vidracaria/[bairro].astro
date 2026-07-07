@@ -26,9 +26,11 @@ const outrosBairros = bairrosDaRegiao.filter((b) => b.slug !== bairro.slug).slic
 
 const title = `Vidraçaria ${prep} ${bairro.nome} - ${SITE_CONFIG.name}`;
 const description = `Vidraçaria ${prep} ${bairro.nome}, ${bairro.regiao} do Rio de Janeiro. Vidros temperados, box de banheiro, cortina de vidro, envidraçamento e muito mais. Orçamento grátis e instalação com garantia.`;
+const canonicalUrl = `/vidracaria/${bairro.slug}/`;
+const ogImage = `${SITE_CONFIG.url}/images/servicos/box-banheiro-vidro-temperado.jpg`;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} image={ogImage} canonical={canonicalUrl}>
   <Header />
   <main class="pt-20">
     <PageHeader

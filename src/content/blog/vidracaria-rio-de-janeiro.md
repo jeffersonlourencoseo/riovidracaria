@@ -61,7 +61,7 @@ A Vidraçaria RJ atende toda a cidade, com destaque para regiões de alta procur
 - [Zona Norte](/vidracaria): Tijuca, Vila Isabel, Méier, Madureira, Cascadura.
 - [Zona Oeste](/vidracaria): Barra da Tijuca, Recreio, Jacarepaguá, Campo Grande.
 - [Centro](/vidracaria/centro): toda a região central do Rio.
-- [Grande Tijuca](/vidracaria/tijuca): atendimento especializado no bairro e arredores.
+- [Zona Norte](/vidracaria): atendimento especializado no bairro e arredores.
 
 ## FAQ sobre vidraçaria Rio de Janeiro
 

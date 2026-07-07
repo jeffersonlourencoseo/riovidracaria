@@ -42,7 +42,7 @@ Quem busca **vidraçaria perto de mim** geralmente precisa de:
 
 ## Como a Vidraçaria RJ atende quem busca vidraçaria perto de mim?
 
-A Vidraçaria RJ organiza o atendimento por região do Rio de Janeiro. Isso significa que, independentemente de você morar na [Tijuca](/vidracaria/tijuca), [Copacabana](/vidracaria/copacabana), [Centro](/vidracaria/centro), [Barra da Tijuca](/vidracaria/barra-da-tijuca) ou [Zona Norte](/vidracaria), existe uma rotina de visitas técnicas programada para o seu bairro.
+A Vidraçaria RJ organiza o atendimento por região do Rio de Janeiro. Isso significa que, independentemente de você morar na [Tijuca e região](/vidracaria), [Copacabana](/vidracaria/copacabana), [Centro](/vidracaria/centro), [Barra da Tijuca](/vidracaria/barra-da-tijuca) ou [Zona Norte](/vidracaria), existe uma rotina de visitas técnicas programada para o seu bairro.
 
 Além disso, o primeiro contato pode ser feito 100% pelo WhatsApp, com fotos, medidas aproximadas e orientação imediata. Se for necessário ir ao local, marcamos a visita no menor prazo possível.
 

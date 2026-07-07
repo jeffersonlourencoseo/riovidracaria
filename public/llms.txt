@@ -15,26 +15,34 @@
 - [Vidros Temperados e Sob Medida](https://riovidracaria.vercel.app/servicos/vidros-temperados)
 - [Todos os serviços](https://riovidracaria.vercel.app/servicos)
 
+## Blog e guias
+
+- [Vidracaria no Rio de Janeiro — Guia Completo](https://riovidracaria.vercel.app/blog/vidracaria-no-rio-de-janeiro)
+- [Como Encontrar uma Vidraçaria Perto de Mim](https://riovidracaria.vercel.app/blog/vidracaria-perto-de-mim)
+- [Vidraçaria Rio de Janeiro — Serviços e Preços](https://riovidracaria.vercel.app/blog/vidracaria-rio-de-janeiro)
+- [Vidraçaria na Tijuca](https://riovidracaria.vercel.app/blog/vidracaria-na-tijuca)
+- [Vidraçaria em Copacabana](https://riovidracaria.vercel.app/blog/vidracaria-em-copacabana)
+- [Vidraçaria na Zona Norte](https://riovidracaria.vercel.app/blog/vidracaria-na-zona-norte)
+- [Todos os artigos](https://riovidracaria.vercel.app/blog)
+
 ## Páginas institucionais
 
 - [Início](https://riovidracaria.vercel.app/)
 - [Sobre a Vidraçaria RJ](https://riovidracaria.vercel.app/sobre)
 - [Contato e Orçamento](https://riovidracaria.vercel.app/contato)
-- [Blog](https://riovidracaria.vercel.app/blog)
 - [Bairros Atendidos no Rio de Janeiro](https://riovidracaria.vercel.app/vidracaria)
 - [Política de Privacidade](https://riovidracaria.vercel.app/privacidade)
 - [Termos de Uso](https://riovidracaria.vercel.app/termos)
 
-## Contato
+## Dados de contato (NAP)
 
-- **WhatsApp:** +55 21 99775-1577
-- **E-mail:** contato@riovidracaria.vercel.app
+- **Nome:** Vidraçaria RJ
 - **Endereço:** Av. Brasil, 11250, Rio de Janeiro, RJ
-- **Horário:** seg–sex 08:00–18:00, sáb 08:00–12:00
+- **Telefone/WhatsApp:** +55 21 99775-1577
+- **E-mail:** contato@riovidracaria.com.br
+- **Horário:** Segunda a sexta, 08h às 18h; sábado, 08h às 12h
+- **Cobertura:** mais de 130 bairros do Rio de Janeiro
 
-## Diferenciais
+## Sitemap
 
-- Orçamento grátis e sem compromisso
-- Instalação com garantia
-- Mais de 10 anos de experiência
-- Atendimento em todos os bairros do Rio de Janeiro
+- [Sitemap XML](https://riovidracaria.vercel.app/sitemap-index.xml)
