@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Vidraçaria RJ',
   tagline: 'Vidros temperados e serviços de vidraçaria no Rio de Janeiro',
-  url: 'https://riovidracaria.com.br',
+  url: 'https://riovidracaria.vercel.app/',
   locale: 'pt-BR',
   city: 'Rio de Janeiro',
   state: 'RJ',

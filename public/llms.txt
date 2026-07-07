@@ -4,31 +4,31 @@
 
 ## Serviços principais
 
-- [Box de Banheiro em Vidro Temperado](https://riovidracaria.com.br/servicos/box-banheiro-vidro-temperado)
-- [Claraboia de Vidro](https://riovidracaria.com.br/servicos/claraboia)
-- [Cortina de Vidro / Envidraçamento de Varanda](https://riovidracaria.com.br/servicos/cortina-envidracamento-varanda)
-- [Divisórias de Vidro](https://riovidracaria.com.br/servicos/divisoria-vidro)
-- [Fechamento de Área com Vidro](https://riovidracaria.com.br/servicos/fechamento-area-vidro)
-- [Guarda Corpo de Vidro](https://riovidracaria.com.br/servicos/guarda-corpo-vidro)
-- [Portas e Janelas de Vidro](https://riovidracaria.com.br/servicos/porta-vidro-temperado)
-- [Espelhos sob Medida](https://riovidracaria.com.br/servicos/venda-espelho)
-- [Vidros Temperados e Sob Medida](https://riovidracaria.com.br/servicos/vidros-temperados)
-- [Todos os serviços](https://riovidracaria.com.br/servicos)
+- [Box de Banheiro em Vidro Temperado](https://riovidracaria.vercel.app/servicos/box-banheiro-vidro-temperado)
+- [Claraboia de Vidro](https://riovidracaria.vercel.app/servicos/claraboia)
+- [Cortina de Vidro / Envidraçamento de Varanda](https://riovidracaria.vercel.app/servicos/cortina-envidracamento-varanda)
+- [Divisórias de Vidro](https://riovidracaria.vercel.app/servicos/divisoria-vidro)
+- [Fechamento de Área com Vidro](https://riovidracaria.vercel.app/servicos/fechamento-area-vidro)
+- [Guarda Corpo de Vidro](https://riovidracaria.vercel.app/servicos/guarda-corpo-vidro)
+- [Portas e Janelas de Vidro](https://riovidracaria.vercel.app/servicos/porta-vidro-temperado)
+- [Espelhos sob Medida](https://riovidracaria.vercel.app/servicos/venda-espelho)
+- [Vidros Temperados e Sob Medida](https://riovidracaria.vercel.app/servicos/vidros-temperados)
+- [Todos os serviços](https://riovidracaria.vercel.app/servicos)
 
 ## Páginas institucionais
 
-- [Início](https://riovidracaria.com.br/)
-- [Sobre a Vidraçaria RJ](https://riovidracaria.com.br/sobre)
-- [Contato e Orçamento](https://riovidracaria.com.br/contato)
-- [Blog](https://riovidracaria.com.br/blog)
-- [Bairros Atendidos no Rio de Janeiro](https://riovidracaria.com.br/vidracaria)
-- [Política de Privacidade](https://riovidracaria.com.br/privacidade)
-- [Termos de Uso](https://riovidracaria.com.br/termos)
+- [Início](https://riovidracaria.vercel.app/)
+- [Sobre a Vidraçaria RJ](https://riovidracaria.vercel.app/sobre)
+- [Contato e Orçamento](https://riovidracaria.vercel.app/contato)
+- [Blog](https://riovidracaria.vercel.app/blog)
+- [Bairros Atendidos no Rio de Janeiro](https://riovidracaria.vercel.app/vidracaria)
+- [Política de Privacidade](https://riovidracaria.vercel.app/privacidade)
+- [Termos de Uso](https://riovidracaria.vercel.app/termos)
 
 ## Contato
 
 - **WhatsApp:** +55 21 99775-1577
-- **E-mail:** contato@riovidracaria.com.br
+- **E-mail:** contato@riovidracaria.vercel.app
 - **Endereço:** Av. Brasil, 11250, Rio de Janeiro, RJ
 - **Horário:** seg–sex 08:00–18:00, sáb 08:00–12:00
 
