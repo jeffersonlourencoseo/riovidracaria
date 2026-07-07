@@ -11,6 +11,11 @@ const servicos = defineCollection({
   }),
 });
 
+const faqItemSchema = z.object({
+  question: z.string(),
+  answer: z.string(),
+});
+
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
@@ -21,6 +26,8 @@ const blog = defineCollection({
     heroImage: z.string().optional(),
     author: z.string().default('Vidraçaria RJ'),
     tags: z.array(z.string()).default([]),
+    faq: z.array(faqItemSchema).optional(),
+    keywords: z.array(z.string()).optional(),
   }),
 });
 

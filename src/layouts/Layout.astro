@@ -10,15 +10,16 @@ export interface Props {
   image?: string;
   canonical?: string;
   noindex?: boolean;
+  keywords?: string[];
 }
 
-const { title, description, image, canonical, noindex } = Astro.props;
+const { title, description, image, canonical, noindex, keywords } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <SEO title={title} description={description} image={image} canonical={canonical} noindex={noindex} />
+    <SEO title={title} description={description} image={image} canonical={canonical} noindex={noindex} keywords={keywords} />
     <SchemaLocalBusiness />
   </head>
   <body class="bg-surface text-ink">

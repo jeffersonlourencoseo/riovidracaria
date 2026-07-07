@@ -60,13 +60,33 @@ const blogSchema = {
     '@id': canonicalUrl,
   },
 };
+
+const faqSchema = post.data.faq
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: post.data.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+
+const postKeywords = post.data.keywords && post.data.keywords.length > 0
+  ? post.data.keywords
+  : [...SITE_CONFIG.keywords, ...post.data.tags];
 ---
 
 <Layout
   title={`${post.data.title} | Blog Vidraçaria RJ`}
   description={post.data.description}
   image={ogImage}
-  canonical={`/blog/${post.slug}/`}>
+  canonical={`/blog/${post.slug}/`}
+  keywords={postKeywords}>
   <Header />
   <main class="pt-20">
     <PageHeader
@@ -106,4 +126,5 @@ const blogSchema = {
   </main>
   <Footer />
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 </Layout>
