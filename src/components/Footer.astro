@@ -71,7 +71,7 @@ const bairrosDestaque = bairros.filter((b) => destaqueBairros.includes(b.slug));
         <ul class="space-y-3 text-ink">
           <li>{SITE_CONFIG.fullAddress}</li>
           <li>
-            <a href={`tel:+55${SITE_CONFIG.whatsapp}`} class="transition-all duration-200 hover:text-primary-400">+55 {SITE_CONFIG.phone}</a>
+            <a href={`tel:+55${SITE_CONFIG.phone.replace(/\D/g, '')}`} class="transition-all duration-200 hover:text-primary-400">+55 {SITE_CONFIG.phone}</a>
           </li>
           <li>
             <a href={`mailto:${SITE_CONFIG.email}`} class="transition-all duration-200 hover:text-primary-400">{SITE_CONFIG.email}</a>
