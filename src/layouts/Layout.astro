@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import SchemaLocalBusiness from '../components/SchemaLocalBusiness.astro';
+import WhatsAppBtn from '../components/WhatsAppBtn.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description, image, canonical, noindex } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <SEO title={title} description={description} image={image} canonical={canonical} noindex={noindex} />
+    <SchemaLocalBusiness />
+  </head>
+  <body class="bg-surface text-ink">
+    <slot />
+    <WhatsAppBtn />
+  </body>
+</html>

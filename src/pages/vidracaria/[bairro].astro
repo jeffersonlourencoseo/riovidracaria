@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { SITE_CONFIG } from '../../data/config.ts';
+import { bairros, getBairrosPorRegiao, preposicaoBairro } from '../../data/bairros.ts';
+
+export async function getStaticPaths() {
+  return bairros.map((bairro) => ({
+    params: { bairro: bairro.slug },
+    props: { bairro },
+  }));
+}
+
+const { bairro } = Astro.props;
+const prep = preposicaoBairro(bairro.nome);
+const allServices = await getCollection('servicos');
+allServices.sort((a, b) => a.data.order - b.data.order);
+const services = allServices.slice(0, 6);
+
+const bairrosDaRegiao = getBairrosPorRegiao()[bairro.regiao] || [];
+const outrosBairros = bairrosDaRegiao.filter((b) => b.slug !== bairro.slug).slice(0, 12);
+
+const title = `Vidraçaria ${prep} ${bairro.nome} - ${SITE_CONFIG.name}`;
+const description = `Vidraçaria ${prep} ${bairro.nome}, ${bairro.regiao} do Rio de Janeiro. Vidros temperados, box de banheiro, cortina de vidro, envidraçamento e muito mais. Orçamento grátis e instalação com garantia.`;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title={`Vidraçaria ${prep} ${bairro.nome}`}
+      subtitle={`Atendimento ${prep} ${bairro.nome}, ${bairro.regiao} do Rio de Janeiro. Vidros temperados, box, envidraçamento, guarda corpo e muito mais.`}
+    />
+
+    <section class="section-padding">
+      <div class="container-main">
+        <div class="grid items-start gap-12 lg:grid-cols-2">
+          <div class="space-y-6">
+            <h2 class="font-display text-3xl font-black leading-tight tracking-tighter text-ink md:text-4xl">
+              Vidraçaria de confiança {prep} <span class="text-gradient">{bairro.nome}</span>
+            </h2>
+            <p class="text-lg leading-relaxed text-ink">
+              A {SITE_CONFIG.name} atende residências, comércios e empresas em <strong class="text-ink">{bairro.nome}</strong> e em toda a {bairro.regiao} do Rio de Janeiro. Trabalhamos com vidros temperados, box de banheiro, cortina de vidro, envidraçamento de varanda, guarda corpo, divisórias, portas, janelas, espelhos e muito mais.
+            </p>
+            <p class="text-ink">
+              Nossa equipe vai até o local para fazer a medição, entender as necessidades do projeto e apresentar o melhor orçamento, sem compromisso. Todos os serviços incluem instalação profissional e garantia.
+            </p>
+            <p class="text-ink">
+              Se você mora ou trabalha em {bairro.nome} e precisa de uma vidraçaria confiável, entre em contato pelo WhatsApp. Atendemos emergências, pequenos reparos e grandes projetos com o mesmo padrão de qualidade.
+            </p>
+          </div>
+
+          <div class="glass-card space-y-6">
+            <h3 class="font-display text-xl font-semibold text-ink">Por que escolher a {SITE_CONFIG.name}?</h3>
+            <ul class="space-y-4">
+              {[
+                'Orçamento grátis e sem compromisso',
+                'Medição no local em ' + bairro.nome,
+                'Vidro temperado e materiais certificados',
+                'Instalação com garantia',
+                'Mais de 10 anos de experiência',
+                'Atendimento rápido e transparente',
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-ink">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-primary-400">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container-main">
+        <h2 class="mb-12 text-center font-display text-3xl font-black leading-tight tracking-tighter text-ink md:text-4xl">
+          Serviços disponíveis {prep} {bairro.nome}
+        </h2>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <a
+              href={`/servicos/${service.slug}`}
+              class="group rounded-2xl border border-glass-border bg-surface-card p-6 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-primary-500/30 hover:shadow-glow"
+            >
+              <h3 class="font-display text-lg font-semibold text-ink group-hover:text-primary-400">
+                {service.data.title}
+              </h3>
+              <p class="mt-2 text-sm text-ink">{service.data.description}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-400">
+                Ver serviço
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container-main">
+        <div class="glass-card">
+          <h2 class="mb-8 font-display text-2xl font-black leading-tight tracking-tighter text-ink md:text-3xl">
+            Outros bairros atendidos na {bairro.regiao}
+          </h2>
+          <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {outrosBairros.map((b) => (
+              <a
+                href={`/vidracaria/${b.slug}`}
+                class="text-sm text-ink transition-all duration-200 hover:scale-105 hover:text-primary-400"
+              >
+                Vidraçaria {preposicaoBairro(b.nome)} {b.nome}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

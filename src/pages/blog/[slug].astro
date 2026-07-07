@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+---
+
+<Layout
+  title={`${post.data.title} | Blog Vidraçaria RJ`}
+  description={post.data.description}>
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title={post.data.title}
+      subtitle={post.data.description}
+    />
+
+    <article class="section-padding">
+      <div class="container-main">
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-8 flex flex-wrap items-center gap-4 text-sm text-ink">
+            <span>{formatDate(post.data.pubDate)}</span>
+            <span>•</span>
+            <span>{post.data.author}</span>
+            {post.data.tags.length > 0 && (
+              <>
+                <span>•</span>
+                <span class="flex gap-2">
+                  {post.data.tags.map((tag) => (
+                    <span class="rounded-full border border-glass-border bg-glass-highlight px-3 py-1 text-xs">{tag}</span>
+                  ))}
+                </span>
+              </>
+            )}
+          </div>
+
+          <div class="glass-card">
+            <div class="prose prose-lg prose-invert max-w-none">
+              <Content />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Layout
+  title="Termos de Uso | Vidraçaria RJ"
+  description="Termos de uso da Vidraçaria RJ. Condições de uso do site e dos serviços oferecidos.">
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title="Termos de Uso"
+      subtitle="Condições gerais para uso do site e contratação dos serviços da Vidraçaria RJ."
+    />
+
+    <section class="section-padding">
+      <div class="container-main">
+        <div class="mx-auto max-w-4xl space-y-6 text-ink">
+          <h2 class="font-display text-2xl font-semibold text-ink">1. Aceitação dos termos</h2>
+          <p>
+            Ao acessar e utilizar este site, você concorda com os termos e condições aqui descritos. Caso não concorde, recomendamos que não utilize os serviços oferecidos.
+          </p>
+
+          <h2 class="font-display text-2xl font-semibold text-ink">2. Serviços oferecidos</h2>
+          <p>
+            A Vidraçaria RJ oferece serviços de vidraçaria, incluindo vidros temperados, box para banheiro, esquadrias de alumínio, fechamento de sacada, espelhos, tampos de vidro e manutenção. Os orçamentos são gratuitos e sem compromisso.
+          </p>
+
+          <h2 class="font-display text-2xl font-semibold text-ink">3. Orçamentos e execução</h2>
+          <p>
+            Os valores apresentados em orçamentos são válidos por prazo determinado e podem ser ajustados conforme as especificações finais do projeto. A execução dos serviços será agendada de comum acordo entre as partes.
+          </p>
+
+          <h2 class="font-display text-2xl font-semibold text-ink">4. Garantia</h2>
+          <p>
+            Garantimos a instalação e a qualidade dos produtos conforme especificado no orçamento. A garantia não cobre danos causados por mau uso, intempéries extremas ou intervenções de terceiros.
+          </p>
+
+          <h2 class="font-display text-2xl font-semibold text-ink">5. Propriedade intelectual</h2>
+          <p>
+            Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é de propriedade da Vidraçaria RJ e está protegido por lei. É proibida a reprodução sem autorização prévia.
+          </p>
+
+          <h2 class="font-display text-2xl font-semibold text-ink">6. Alterações nos termos</h2>
+          <p>
+            Estes termos podem ser alterados a qualquer momento. As mudanças entrarão em vigor assim que publicadas nesta página.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,37 @@
+export const SITE_CONFIG = {
+  name: 'Vidraçaria RJ',
+  tagline: 'Vidros temperados e serviços de vidraçaria no Rio de Janeiro',
+  url: 'https://www.vidracariarj.com.br',
+  locale: 'pt-BR',
+  city: 'Rio de Janeiro',
+  state: 'RJ',
+  country: 'BR',
+  address: 'Av. Brasil, 11250',
+  fullAddress: 'Av. Brasil, 11250, Rio de Janeiro, RJ',
+  postalCode: '20000-000',
+  phone: '21 99775-1577',
+  whatsapp: '5521997751577',
+  email: 'contato@riovidracaria.com.br',
+  openingHours: 'Mo-Fr 08:00-18:00, Sa 08:00-12:00',
+  geo: {
+    latitude: -22.9068,
+    longitude: -43.1729,
+  },
+  social: {
+    whatsapp: 'https://wa.me/5521997751577',
+  },
+  keyword: 'vidraçaria perto de mim',
+  keywords: [
+    'vidracaria',
+    'vidraçaria perto de mim',
+    'vidraçaria rio de janeiro',
+    'vidraçaria na tijuca',
+    'vidraçaria em copacabana',
+    'vidraçaria na zona norte',
+  ],
+  differentials: [
+    'Orçamento grátis',
+    'Instalação com garantia',
+    'Mais de 10 anos de mercado',
+  ],
+} as const;

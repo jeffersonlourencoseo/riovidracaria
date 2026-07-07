@@ -1,0 +1,20 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-glass-border bg-surface pt-40 pb-24">
+  <div class="absolute inset-0 bg-hero-glow"></div>
+  <div class="container-main relative">
+    <div class="max-w-3xl">
+      <h1 class="font-display text-3xl font-black leading-tight tracking-tighter text-ink sm:text-4xl md:text-5xl lg:text-6xl">{title}</h1>
+      {subtitle && (
+        <p class="mt-6 text-lg text-ink md:text-xl">{subtitle}</p>
+      )}
+    </div>
+  </div>
+</section>

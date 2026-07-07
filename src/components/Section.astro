@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+  class?: string;
+  light?: boolean;
+}
+
+const { title, subtitle, centered = false, class: className = '', light = false } = Astro.props;
+---
+
+<section class={`section-padding bg-surface ${className}`}>
+  <div class="container-main">
+    <div class={`max-w-3xl ${centered ? 'mx-auto text-center' : ''}`}>
+      <span class="text-sm font-semibold uppercase tracking-widest text-accent-400">{title.split(' ')[0]}</span>
+      <h2 class="mt-3 font-display text-3xl font-black leading-tight tracking-tighter text-ink md:text-4xl">{title}</h2>
+      {subtitle && (
+        <p class="mt-4 text-lg text-ink">{subtitle}</p>
+      )}
+    </div>
+    <div class="mt-16">
+      <slot />
+    </div>
+  </div>
+</section>

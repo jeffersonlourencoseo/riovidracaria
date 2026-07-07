@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('servicos');
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+---
+
+<Layout
+  title={`${service.data.title} | Vidraçaria RJ`}
+  description={service.data.description}>
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title={service.data.title}
+      subtitle={service.data.description}
+    />
+
+    {service.data.image && (
+      <section class="pb-10 pt-8">
+        <div class="container-main">
+          <div class="mx-auto max-w-4xl">
+            <div class="relative overflow-hidden rounded-2xl border border-glass-border">
+              <img
+                src={service.data.image}
+                alt={service.data.title}
+                class="h-auto w-full object-cover"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <article class="section-padding">
+      <div class="container-main">
+        <div class="mx-auto max-w-4xl">
+          <div class="glass-card">
+            <div class="prose prose-lg prose-invert max-w-none">
+              <Content />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

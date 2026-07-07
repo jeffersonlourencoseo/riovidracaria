@@ -1,0 +1,84 @@
+---
+---
+
+<form class="glass-card space-y-6" action="/contato/sucesso" method="POST" netlify name="contato">
+  <input type="hidden" name="form-name" value="contato" />
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="space-y-2">
+      <label for="nome" class="text-sm font-medium text-ink">Nome completo</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        placeholder="Seu nome"
+        class="w-full rounded-lg border border-glass-border bg-surface/50 px-4 py-3 text-ink placeholder-ink-subtle backdrop-blur-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+      />
+    </div>
+    <div class="space-y-2">
+      <label for="telefone" class="text-sm font-medium text-ink">Telefone / WhatsApp</label>
+      <input
+        type="tel"
+        id="telefone"
+        name="telefone"
+        required
+        placeholder="(21) 99999-9999"
+        class="w-full rounded-lg border border-glass-border bg-surface/50 px-4 py-3 text-ink placeholder-ink-subtle backdrop-blur-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+      />
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <label for="email" class="text-sm font-medium text-ink">E-mail</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="seu@email.com"
+      class="w-full rounded-lg border border-glass-border bg-surface/50 px-4 py-3 text-ink placeholder-ink-subtle backdrop-blur-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+    />
+  </div>
+
+  <div class="space-y-2">
+    <label for="servico" class="text-sm font-medium text-ink">Serviço de interesse</label>
+    <select
+      id="servico"
+      name="servico"
+      class="w-full rounded-lg border border-glass-border bg-surface/50 px-4 py-3 text-ink backdrop-blur-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+    >
+      <option value="">Selecione um serviço</option>
+      <option value="box-banheiro-vidro-temperado">Box de Banheiro em Vidro Temperado (Blindex)</option>
+      <option value="claraboia">Claraboia (Telhado de Vidro)</option>
+      <option value="cortina-envidracamento-varanda">Cortina de Vidro e Envidraçamento de Varanda</option>
+      <option value="divisoria-vidro">Divisórias de Vidro</option>
+      <option value="fechamento-area-vidro">Fechamento de Área com Vidro</option>
+      <option value="guarda-corpo-vidro">Guarda Corpo de Vidro</option>
+      <option value="janela-vidro">Janela de Vidro</option>
+      <option value="lousa-vidro">Lousa de Vidro (Quadro de Vidro)</option>
+      <option value="muro-vidro">Muro de Vidro (Grade de Vidro)</option>
+      <option value="porta-vidro-temperado">Porta de Vidro Temperado</option>
+      <option value="porta-vidro-articulada">Porta de Vidro Articulada e Pivotante</option>
+      <option value="venda-espelho">Venda de Espelho</option>
+      <option value="vidro-colorido">Vidro Colorido (Vidro Pintado)</option>
+      <option value="vidro-sob-medida">Vidro Sob Medida</option>
+      <option value="vidros-temperados">Vidros Temperados</option>
+      <option value="outro">Outro</option>
+    </select>
+  </div>
+
+  <div class="space-y-2">
+    <label for="mensagem" class="text-sm font-medium text-ink">Mensagem</label>
+    <textarea
+      id="mensagem"
+      name="mensagem"
+      rows="5"
+      required
+      placeholder="Descreva o que você precisa..."
+      class="w-full rounded-lg border border-glass-border bg-surface/50 px-4 py-3 text-ink placeholder-ink-subtle backdrop-blur-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary w-full md:w-auto">
+    Enviar mensagem
+  </button>
+</form>

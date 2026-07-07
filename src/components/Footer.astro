@@ -1,0 +1,112 @@
+---
+import { SITE_CONFIG } from '../data/config.ts';
+import { bairros, preposicaoBairro } from '../data/bairros.ts';
+
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { label: 'Serviços', href: '/servicos' },
+  { label: 'Sobre', href: '/sobre' },
+  { label: 'Bairros Atendidos', href: '/vidracaria' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contato', href: '/contato' },
+  { label: 'Política de Privacidade', href: '/privacidade' },
+  { label: 'Termos de Uso', href: '/termos' },
+];
+
+const destaqueBairros = [
+  'copacabana',
+  'ipanema',
+  'leblon',
+  'botafogo',
+  'barra-da-tijuca',
+  'tijuca',
+  'meier',
+  'madureira',
+  'centro',
+  'santa-cruz',
+  'realengo',
+  'jacarepagua',
+];
+
+const bairrosDestaque = bairros.filter((b) => destaqueBairros.includes(b.slug));
+---
+
+<footer class="border-t border-glass-border bg-surface pb-12 pt-24">
+  <div class="container-main">
+    <div class="grid gap-12 lg:grid-cols-4">
+      <!-- Marca e descrição -->
+      <div class="space-y-6 lg:col-span-1">
+        <a href="/" class="flex items-center gap-3" aria-label="Vidraçaria RJ">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 text-surface shadow-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="3" y1="3" x2="21" y2="21" />
+            </svg>
+          </div>
+          <span class="font-display text-lg font-semibold tracking-tight text-ink">
+            Vidraçaria <span class="text-gradient">RJ</span>
+          </span>
+        </a>
+        <p class="max-w-xs text-ink">
+          {SITE_CONFIG.tagline}. Orçamento grátis, instalação com garantia e mais de 10 anos de experiência.
+        </p>
+      </div>
+
+      <!-- Navegação -->
+      <div class="space-y-6">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-ink">Navegação</h3>
+        <ul class="space-y-3">
+          {footerLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-ink transition-all duration-200 hover:scale-105 hover:text-primary-400">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div class="space-y-6">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-ink">Contato</h3>
+        <ul class="space-y-3 text-ink">
+          <li>{SITE_CONFIG.fullAddress}</li>
+          <li>
+            <a href={`tel:+55${SITE_CONFIG.whatsapp}`} class="transition-all duration-200 hover:text-primary-400">+55 {SITE_CONFIG.phone}</a>
+          </li>
+          <li>
+            <a href={`mailto:${SITE_CONFIG.email}`} class="transition-all duration-200 hover:text-primary-400">{SITE_CONFIG.email}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bairros em destaque -->
+      <div class="space-y-6">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-ink">Bairros atendidos</h3>
+        <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+          {bairrosDestaque.map((bairro) => (
+            <li>
+              <a
+                href={`/vidracaria/${bairro.slug}`}
+                class="text-sm text-ink transition-all duration-200 hover:scale-105 hover:text-primary-400"
+              >
+                Vidraçaria {preposicaoBairro(bairro.nome)} {bairro.nome}
+              </a>
+            </li>
+          ))}
+          <li class="pt-2">
+            <a
+              href="/vidracaria"
+              class="text-sm font-semibold text-primary-400 transition-all duration-200 hover:scale-105 hover:text-accent-400"
+            >
+              Ver todos os bairros →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 border-t border-glass-border pt-8 text-center text-sm text-ink">
+      © {currentYear} {SITE_CONFIG.name}. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>

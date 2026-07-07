@@ -1,0 +1,29 @@
+---
+import { SITE_CONFIG } from '../data/config.ts';
+---
+
+<section class="relative overflow-hidden border-y border-glass-border bg-surface py-20 lg:py-24">
+  <div class="absolute inset-0 bg-hero-glow"></div>
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent"></div>
+  <div class="container-main relative text-center">
+    <h2 class="font-display text-3xl font-black leading-tight tracking-tighter text-ink md:text-4xl">
+      Orçamento grátis em poucos minutos
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-ink">
+      Entre em contato pelo WhatsApp e receba um orçamento sem compromisso para o seu projeto de vidros no Rio de Janeiro.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a
+        href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Olá! Gostaria de um orçamento grátis.`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Falar no WhatsApp
+      </a>
+      <a href="/contato" class="btn-secondary">
+        Formulário de contato
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { SITE_CONFIG } from '../data/config.ts';
+---
+
+<Layout
+  title="Contato | Vidraçaria RJ"
+  description="Entre em contato com a Vidraçaria RJ. Atendimento no Rio de Janeiro por WhatsApp, telefone, e-mail ou formulário. Orçamento grátis.">
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title="Fale com a Vidraçaria RJ"
+      subtitle="Solicite um orçamento grátis ou tire suas dúvidas. Atendemos residências e comércios em toda a cidade do Rio de Janeiro."
+    />
+
+    <section class="section-padding">
+      <div class="container-main">
+        <div class="grid gap-16 lg:grid-cols-3">
+          <div class="space-y-8 lg:col-span-1">
+            <div class="glass-card">
+              <h3 class="font-display text-lg font-semibold text-ink">WhatsApp</h3>
+              <p class="mt-2 text-ink">Orçamento rápido e atendimento direto.</p>
+              <a
+                href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Olá! Gostaria de um orçamento grátis.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center gap-2 text-accent-400 transition hover:text-accent-300"
+              >
+                +55 {SITE_CONFIG.phone}
+              </a>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="font-display text-lg font-semibold text-ink">Telefone</h3>
+              <p class="mt-2 text-ink">Ligue para agendar uma visita técnica.</p>
+              <a href={`tel:+55${SITE_CONFIG.whatsapp}`} class="mt-4 inline-flex items-center gap-2 text-primary-400 transition hover:text-primary-300">
+                +55 {SITE_CONFIG.phone}
+              </a>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="font-display text-lg font-semibold text-ink">E-mail</h3>
+              <p class="mt-2 text-ink">Envie sua solicitação a qualquer momento.</p>
+              <a href={`mailto:${SITE_CONFIG.email}`} class="mt-4 inline-flex items-center gap-2 text-primary-400 transition hover:text-primary-300">
+                {SITE_CONFIG.email}
+              </a>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="font-display text-lg font-semibold text-ink">Endereço</h3>
+              <p class="mt-2 text-ink">{SITE_CONFIG.fullAddress}</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

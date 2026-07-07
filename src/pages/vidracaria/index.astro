@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { SITE_CONFIG } from '../../data/config.ts';
+import { bairros, getBairrosPorRegiao, getBairrosPorSubregiao, preposicaoBairro } from '../../data/bairros.ts';
+
+const grouped = getBairrosPorRegiao();
+const title = `Vidraçaria no Rio de Janeiro - Bairros Atendidos | ${SITE_CONFIG.name}`;
+const description = `Vidraçaria RJ atende mais de 130 bairros do Rio de Janeiro. Box de banheiro, vidro temperado, envidraçamento, guarda corpo e muito mais. Orçamento grátis.`;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title="Vidraçaria no Rio de Janeiro"
+      subtitle="Atendemos mais de 130 bairros da capital fluminense com vidros temperados, box, envidraçamento e instalação profissional."
+    />
+
+    <section class="section-padding">
+      <div class="container-main">
+        <p class="mx-auto mb-16 max-w-3xl text-center text-lg text-ink">
+          A {SITE_CONFIG.name} leva soluções em vidros para residências e comércios de todas as regiões do Rio de Janeiro. Escolha o bairro mais próximo de você e solicite seu orçamento grátis.
+        </p>
+
+        <div class="space-y-16">
+          {Object.entries(grouped).map(([regiao, bairrosDaRegiao]) => {
+            const subregioes = getBairrosPorSubregiao(regiao);
+            const temSubregioes = Object.keys(subregioes).length > 0;
+
+            return (
+              <div class="glass-card">
+                <h2 class="mb-8 border-b border-glass-border pb-4 font-display text-2xl font-black leading-tight tracking-tighter text-ink md:text-3xl">
+                  {regiao}
+                </h2>
+
+                {temSubregioes ? (
+                  <div class="space-y-10">
+                    {Object.entries(subregioes).map(([subregiao, bairrosSub]) => (
+                      <div>
+                        <h3 class="mb-4 font-display text-lg font-semibold text-primary-400">{subregiao}</h3>
+                        <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                          {bairrosSub.map((bairro) => (
+                            <a
+                              href={`/vidracaria/${bairro.slug}`}
+                              class="text-sm text-ink transition-all duration-200 hover:scale-105 hover:text-primary-400"
+                            >
+                              Vidraçaria {preposicaoBairro(bairro.nome)} {bairro.nome}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {bairrosDaRegiao.map((bairro) => (
+                      <a
+                        href={`/vidracaria/${bairro.slug}`}
+                        class="text-sm text-ink transition hover:text-primary-400"
+                      >
+                        Vidraçaria {preposicaoBairro(bairro.nome)} {bairro.nome}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

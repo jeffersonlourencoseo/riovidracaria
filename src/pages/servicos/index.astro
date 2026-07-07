@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const services = await getCollection('servicos');
+services.sort((a, b) => a.data.order - b.data.order);
+
+const iconMap: Record<string, string> = {
+  glass: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="3" x2="21" y2="21"/></svg>`,
+  box: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6"/><path d="M12 21v-8"/><path d="M5 13h14"/><path d="M4 13v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/></svg>`,
+  frame: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
+  balcony: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M12 21V11"/><path d="M12 11 8 8"/></svg>`,
+  mirror: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v16"/><path d="M3 5h16"/><rect x="7" y="7" width="14" height="14" rx="2"/></svg>`,
+};
+---
+
+<Layout
+  title="Serviços | Vidraçaria RJ"
+  description="Conheça os 15 serviços da Vidraçaria RJ: vidros temperados, box de banheiro, fechamento de área, guarda corpo, cortina de vidro, espelhos e muito mais no Rio de Janeiro.">
+  <Header />
+  <main class="pt-20">
+    <PageHeader
+      title="Nossos serviços de vidraçaria"
+      subtitle="Soluções completas em vidros para residências e comércios no Rio de Janeiro, com orçamento grátis e instalação garantida."
+    />
+
+    <section class="section-padding">
+      <div class="container-main">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <ServiceCard
+              title={service.data.title}
+              description={service.data.description}
+              href={`/servicos/${service.slug}`}
+              icon={iconMap[service.data.icon || 'glass']}
+              image={service.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

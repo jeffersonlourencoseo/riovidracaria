@@ -1,0 +1,32 @@
+{
+  "name": "vidracaria-rj-site",
+  "version": "1.0.0",
+  "description": "Site da Vidraçaria RJ - vidros temperados e serviços de vidraçaria no Rio de Janeiro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [
+    "vidracaria",
+    "vidros temperados",
+    "Rio de Janeiro"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/vercel": "^7.8.2",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.20",
+    "astro": "^4.16.19",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}
