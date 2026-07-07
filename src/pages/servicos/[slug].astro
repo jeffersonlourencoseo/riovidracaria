@@ -5,6 +5,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
+import { SITE_CONFIG } from '../../data/config.ts';
 
 export async function getStaticPaths() {
   const services = await getCollection('servicos');
@@ -16,11 +17,15 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const { Content } = await service.render();
+
+const ogImage = service.data.image ? `${SITE_CONFIG.url}${service.data.image}` : undefined;
 ---
 
 <Layout
-  title={`${service.data.title} | Vidraçaria RJ`}
-  description={service.data.description}>
+  title={`${service.data.title} no Rio de Janeiro | Vidraçaria RJ`}
+  description={service.data.description}
+  image={ogImage}
+  canonical={`/servicos/${service.slug}/`}>
   <Header />
   <main class="pt-20">
     <PageHeader
