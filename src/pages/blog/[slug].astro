@@ -5,6 +5,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
+import { SITE_CONFIG } from '../../data/config.ts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,6 +18,9 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+const canonicalUrl = `${SITE_CONFIG.url}/blog/${post.slug}/`;
+const ogImage = post.data.heroImage ? `${SITE_CONFIG.url}${post.data.heroImage}` : undefined;
+
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('pt-BR', {
     day: '2-digit',
@@ -24,11 +28,45 @@ function formatDate(date: Date) {
     year: 'numeric',
   }).format(date);
 }
+
+function isoDate(date: Date) {
+  return date.toISOString().split('T')[0];
+}
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: ogImage,
+  url: canonicalUrl,
+  datePublished: isoDate(post.data.pubDate),
+  dateModified: post.data.updatedDate ? isoDate(post.data.updatedDate) : isoDate(post.data.pubDate),
+  author: {
+    '@type': 'Organization',
+    name: post.data.author,
+    url: SITE_CONFIG.url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_CONFIG.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_CONFIG.url}/favicon.svg`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
 ---
 
 <Layout
   title={`${post.data.title} | Blog Vidraçaria RJ`}
-  description={post.data.description}>
+  description={post.data.description}
+  image={ogImage}
+  canonical={`/blog/${post.slug}/`}>
   <Header />
   <main class="pt-20">
     <PageHeader
@@ -36,13 +74,13 @@ function formatDate(date: Date) {
       subtitle={post.data.description}
     />
 
-    <article class="section-padding">
+    <article class="section-padding" itemscope itemtype="https://schema.org/BlogPosting">
       <div class="container-main">
         <div class="mx-auto max-w-4xl">
           <div class="mb-8 flex flex-wrap items-center gap-4 text-sm text-ink">
-            <span>{formatDate(post.data.pubDate)}</span>
+            <span itemprop="datePublished" content={isoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</span>
             <span>•</span>
-            <span>{post.data.author}</span>
+            <span itemprop="author">{post.data.author}</span>
             {post.data.tags.length > 0 && (
               <>
                 <span>•</span>
@@ -67,4 +105,5 @@ function formatDate(date: Date) {
     <CtaBanner />
   </main>
   <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 </Layout>
