@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Vidraçaria RJ',
   tagline: 'Vidros temperados e serviços de vidraçaria no Rio de Janeiro',
-  url: 'https://www.vidracariarj.com.br',
+  url: 'https://riovidracaria.com.br',
   locale: 'pt-BR',
   city: 'Rio de Janeiro',
   state: 'RJ',
